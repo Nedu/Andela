@@ -1,0 +1,26 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+	<div class="ui huge header"><%= student.name %></div>
+	<div class="ui top attached segment">
+		<div class="item">
+			<img class="ui centered rounded image" src="<%= student.image %>" >
+			<div class="content">
+				<span>Department: <%= student.department %></span>
+				<br>
+				<span>Email: <%= student.email %></span>
+			</div>
+			<div class="description">
+				<span>Date of Birth: <%= student.dateofbirth %></span>
+				<br>
+				<span>Phone Number: <%= student.phone %></span>
+			</div>
+			<a class="ui orange basic button" href="/students/<%= student._id %>/edit">Edit</a>
+			<form id="delete" action="/students/<%= student._id %>?_method=DELETE" method="POST">
+				<button class="ui red basic button">Delete</button>
+			</form>
+		</div>
+	</div>		
+</div>
+
+<% include partials/footer %>

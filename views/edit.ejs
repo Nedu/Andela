@@ -1,0 +1,34 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+	<div class="ui huge header">Edit <%= student.name %></div>
+	<form class="ui form" action="/students/<%= student._id %>?_method=PUT" method="Post">
+		<div class="field">
+			<label>Name</label>
+			<input type="text" name="student[name]" value="<%= student.name %>">
+		</div>
+		<div class="field">
+			<label>Image</label>
+			<input type="text" name="student[image]" value="<%= student.image%>">
+		</div>
+		<div class="field">
+			<label>Email</label>
+			<input type="text" name="student[email]" value="<%= student.email %>">
+		</div>
+		<div class="field">
+			<label>Date of Birth</label>
+			<input type="text" name="student[dateofbirth]" value="<%= student.dateofbirth %>">
+		</div>
+		<div class="field">
+			<label>Department</label>
+			<input type="text" name="student[department]" value="<%= student.department %>">
+		</div>
+		<div class="field">
+			<label>Phone</label>
+			<input type="text" name="student[phone]" value="<%= student.phone %>">
+		</div>
+		<input class="ui violet big basic button" type="submit">
+	</form>
+</div>
+
+<% include partials/footer %>
